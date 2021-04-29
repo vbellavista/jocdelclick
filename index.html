@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="funcions.js"></script>
+</head>
+
+<body>
+  <p id="pregunta"></p>
+  <input type="radio"  id="r1" >
+  <label id="en1"></label>
+
+  <input type="radio"  id="r2">
+  <label id="en2"></label>
+
+  <input type="radio" id="r3" >
+  <label id="en3"></label>
+
+  <input type="radio"  id="r4" >
+  <label id="en4"></label>
+
+
+
+  <script>
+    var pos = 0;
+    var contingutJSON =
+    {
+      "quiz":         [
+          {
+
+            "question": "Which one is correct team name in NBA?",
+            "options": [
+              "New York Bulls",
+              "Los Angeles Kings",
+              "Golden State Warriros",
+              "Huston Rocket"
+            ],
+            "answer": "4"
+
+          },
+
+          {
+            "question": "5 + 7 = ?",
+            "options": [
+              "10",
+              "11",
+              "12",
+              "13"
+            ],
+            "answer": "3"
+          },
+          {
+            "question": "12 - 8 = ?",
+            "options": [
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "answer": "4"
+          }
+
+        ]}    ;
+
+    function resposta() {
+      
+      // alert(document.getElementById('r'+a).checked);
+      alert(document.getElementById("r2").checked);
+      
+    }
+
+    function mostra() {
+      document.getElementById("pregunta").innerHTML = contingutJSON.quiz[0].question;
+      document.getElementById("en1").innerHTML = contingutJSON.quiz[0].options[0];
+      document.getElementById("en2").innerHTML = contingutJSON.quiz[0].options[1];
+      document.getElementById("en3").innerHTML = contingutJSON.quiz[0].options[2];
+      document.getElementById("en4").innerHTML = contingutJSON.quiz[0].options[3];
+    }
+
+  </script>
+  <input id="clickMe" type="button" value="Anterior" onclick="doAnterior();" />
+  <input id="clickMe" type="button" value="Següent" onclick="doSeguent();" />
+
+  <button onclick="resposta()">Resposta</button>
+
+
+  <script>
+
+    mostra();
+  </script>
+
+</body>
+
+</html>
